@@ -1,23 +1,22 @@
 package com.crud.card.service;
 
+import com.crud.card.model.tbPersonas;
 import com.crud.card.model.tbTiposPersonas;
+import com.crud.card.repository.IPersonasepository;
 import com.crud.card.repository.ITiposPersonasepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
-public class TiposPersonaService implements ITipPersonasService {
-
+public class PersonaService implements PersonasService {
     @Autowired
-    private ITiposPersonasepository iTiposPersonasRepository;
-
+    private IPersonasepository IPersonasepository;
     @Override
-    public List<tbTiposPersonas> findAll() {
-        List<tbTiposPersonas> list;
+    public List<tbPersonas> findAll() {
+        List<tbPersonas> list;
         try{
-            list = iTiposPersonasRepository.findAll();
+            list = IPersonasepository.findAll();
         }catch (Exception ex){
             throw ex;
         }
@@ -25,10 +24,10 @@ public class TiposPersonaService implements ITipPersonasService {
     }
 
     @Override
-    public int save(tbTiposPersonas TiposPersonas) {
+    public int save(tbPersonas Personas) {
         int row;
         try{
-            row = iTiposPersonasRepository.save(TiposPersonas);
+            row = IPersonasepository.save(Personas);
         }catch (Exception ex){
             throw ex;
         }
@@ -36,10 +35,10 @@ public class TiposPersonaService implements ITipPersonasService {
     }
 
     @Override
-    public int update(tbTiposPersonas TiposPersonas) {
+    public int update(tbPersonas Personas) {
         int row;
         try{
-            row = iTiposPersonasRepository.update(TiposPersonas);
+            row = IPersonasepository.update(Personas);
         }catch (Exception ex){
             throw ex;
         }
@@ -47,10 +46,10 @@ public class TiposPersonaService implements ITipPersonasService {
     }
 
     @Override
-    public int deleteById(int id) {
+    public int deleteById(String id) {
         int row;
         try{
-            row = iTiposPersonasRepository.deleteById(id);
+            row = IPersonasepository.deleteById(id);
         }catch (Exception ex){
             throw ex;
         }

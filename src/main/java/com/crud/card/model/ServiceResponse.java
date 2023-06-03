@@ -6,4 +6,5 @@ import lombok.Data;
 public class ServiceResponse {
     Boolean success;
     String message;
+
 }

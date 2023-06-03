@@ -4,7 +4,7 @@ import com.crud.card.model.tbTiposPersonas;
 
 import java.util.List;
 
-public interface ITipoPersonasService {
+public interface ITipPersonasService {
 
     public List<tbTiposPersonas> findAll();
     public int save(tbTiposPersonas tbTiposPersonas);
